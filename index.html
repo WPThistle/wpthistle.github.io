@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WPThistle Backup and Restore: WordPress backups to storage you control</title>
+<meta name="description" content="WPThistle Backup and Restore is a free, open source WordPress plugin that backs up your site to Nextcloud, ownCloud or OpenCloud you control, or straight to your browser, with read-back SHA-256 verification on every backup.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <img class="logo" src="assets/logo.png" alt="WPThistle logo">
+  <div><img class="wordmark" src="assets/wordmark.png" alt="WPThistle"></div>
+  <p class="tagline">WordPress backup &amp; restore to storage you control</p>
+  <a class="btn" href="https://github.com/WPThistle/wpthistle-backup-restore/releases">Download the latest release</a>
+  <a class="btn secondary" href="https://github.com/WPThistle/wpthistle-backup-restore">View on GitHub</a>
+</header>
+
+<section>
+<h2>Why this exists</h2>
+<p>Most WordPress-to-cloud backup plugins ask you to trust that a backup succeeded. This plugin never reports success until it has independently read every uploaded component back from storage and verified its SHA-256 checksum against the one recorded at archive time, with a final completion marker uploaded and verified last.</p>
+<p>Your sites were backed up to a service you may be leaving. WPThistle backs them up to storage you control instead, and makes every backup prove itself before it is called finished.</p>
+</section>
+
+<section>
+<h2>What it does</h2>
+<div class="grid">
+  <div class="card"><h3>Backups you control</h3><p>Manual or scheduled backups of your database and files to a Nextcloud, ownCloud or OpenCloud server you control, over authenticated HTTPS WebDAV. Or straight to your browser with "Download Now", with zero cloud dependency.</p></div>
+  <div class="card"><h3>Verified, every time</h3><p>Read-back SHA-256 verification of every uploaded component before a backup is ever marked complete. Retention pruning and opt-in incremental file backups keep storage in check.</p></div>
+  <div class="card"><h3>Restore and migrate</h3><p>One-click restore in place, from your configured destination or from an uploaded backup bundle. The Migrate section restores a backup onto a new domain and rewrites every URL it contains to match.</p></div>
+  <div class="card"><h3>Built to keep running</h3><p>A non-blocking, resumable job runner that checkpoints its progress, so an interrupted backup or restore resumes instead of restarting. Notifications on success or failure across email and eight other channels.</p></div>
+  <div class="card"><h3>WP-CLI support</h3><p>Run backups, check status and restore from the command line with <code>wp wpthistle-backup-restore run</code>, <code>status</code> and <code>restore</code>.</p></div>
+  <div class="card"><h3>Updates without a marketplace</h3><p>A self-hosted update feed through GitHub Releases. No wordpress.org listing required, no account, no subscription.</p></div>
+</div>
+</section>
+
+<section>
+<h2>Requirements</h2>
+<p>WordPress 6.4 or later, and PHP 8.1 or later. To use "Download Now", nothing else is needed. To back up to a Nextcloud, ownCloud or OpenCloud destination, that server needs to be reachable over HTTPS, with a dedicated, non-admin account and an app password. Do not use your main account's password.</p>
+</section>
+
+<section>
+<h2>Install</h2>
+<pre><code>1. Download the latest release ZIP from GitHub Releases.
+2. Upload and activate the plugin in WordPress.
+3. Go to WPThistle &gt; Backup and Restore.
+4. Enter your destination, or skip it to use "Download Now".
+5. Click "Back Up Now".</code></pre>
+<p>Restoring is one click from the same settings page. Tick "this backup is from a different site" if the backup came from a different domain, and every URL in it is migrated to the new site's address.</p>
+</section>
+
+<section>
+<h2>Security</h2>
+<p>The plugin has a documented threat model and has been through independent security review before shipping, with fixes re-verified. Authenticated HTTPS WebDAV transport only: no plaintext credentials and no TLS verification bypass. See the <a href="https://github.com/WPThistle/wpthistle-backup-restore/blob/main/SECURITY.md">security policy</a> for how to report a vulnerability, and the <a href="https://github.com/WPThistle/wpthistle-backup-restore/blob/main/docs/threat-model.md">threat model</a> for the full picture.</p>
+<p>Multisite is not supported, and is not a planned feature.</p>
+</section>
+
+<section>
+<h2>Free, with no paywall</h2>
+<p>WPThistle Backup and Restore is free and open source under the GPLv2 or later. There is no premium tier, no subscription, and no feature held back behind a paywall. Every feature is in the free version because there is only one version.</p>
+</section>
+
+<footer>
+  <p><a href="https://github.com/WPThistle/wpthistle-backup-restore">WPThistle on GitHub</a> &middot; <a href="https://money.thistle.casa">MoneyThistle</a></p>
+  <p>WPThistle Backup and Restore, currently v2.9.1. Free and open source under GPLv2+.</p>
+</footer>
+</div>
+</body>
+</html>
